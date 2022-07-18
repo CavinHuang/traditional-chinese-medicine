@@ -23,9 +23,9 @@ Page({
     this.direct()
   },
   direct() {
-    let url = '/pages/home/index'
+    let url = '/pages/category/index'
     if (true) {
-      url = '/pages/home/index'
+      url = '/pages/category/index'
     }
     wx.switchTab({
       url

@@ -6,11 +6,11 @@
   </view>
   <view class='top'>
     <view class='wrapper'>
-      <image mode='widthFix' src='/images/launch_diamond.png'></image>
-      <view>相信科技的力量</view>
+      <image mode='widthFix' src='/images/logo.jpeg'></image>
+      <view>相信中药的作用</view>
     </view>
   </view>
   <view class='bottom'>
-    <image mode='widthFix' src='/images/launch_bottom.png'></image>
+    <!-- <image mode='widthFix' src='/images/launch_bottom.png'></image> -->
   </view>
 </view>

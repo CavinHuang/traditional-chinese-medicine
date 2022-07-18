@@ -12,23 +12,23 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#037CFF",
-    "navigationBarTitleText": "汪苗博客",
+    "navigationBarBackgroundColor": "#5d3d21",
+    "navigationBarTitleText": "中药知识普及",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
   },
   "tabBar": {
-    "selectedColor": "#037CFF",
-    "color": "#F4A7B9",
+    "selectedColor": "#5d3d21",
+    "color": "#333",
     "list": [
       {
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-selected.png",
-        "pagePath": "pages/home/index"
+        "pagePath": "pages/category/index"
       },
       {
-        "text": "专题",
+        "text": "查询",
         "iconPath": "images/category.png",
         "selectedIconPath": "images/category-selected.png",
         "pagePath": "pages/category/index"
