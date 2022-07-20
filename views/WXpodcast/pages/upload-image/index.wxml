@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class="upload-form-wrapper">
+    <input type='text' placeholder="填写批次号" />
+    <view class="image-wrapper">
+      <view class="image-item">
+        <image src="http://oss.wangmiaozero.cn/wechat/2.jpg"></image>
+        <view class="delete-icon">
+          <image src="/images/delete.png"></image>
+        </view>
+      </view>
+      <view class="image-item">
+        <image src="http://oss.wangmiaozero.cn/wechat/2.jpg"></image>
+        <view class="delete-icon">
+          <image src="/images/delete.png"></image>
+        </view>
+      </view>
+    </view>
+   <view class="button-group">
+    <button class="add-image" bindtap="chooseImage">添加图片</button>
+    <button class="submit-btn">提 交</button>
+   </view>
+  </view>
+</view>

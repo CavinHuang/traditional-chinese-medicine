@@ -8,7 +8,9 @@
     "pages/about/index",
     "pages/share/index",
     "pages/collect/index",
-    "pages/new/index"
+    "pages/new/index",
+    "pages/query/index",
+    "pages/upload-image/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,20 +25,20 @@
     "list": [
       {
         "text": "首页",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-selected.png",
+        "iconPath": "images/wenzhang.png",
+        "selectedIconPath": "images/wenzhang-selected.png",
         "pagePath": "pages/category/index"
       },
       {
         "text": "查询",
-        "iconPath": "images/category.png",
-        "selectedIconPath": "images/category-selected.png",
-        "pagePath": "pages/category/index"
+        "iconPath": "images/chaxun.png",
+        "selectedIconPath": "images/chaxun-selected.png",
+        "pagePath": "pages/query/index"
       },
       {
         "text": "我的",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my-selected.png",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-selected.png",
         "pagePath": "pages/my/index"
       }
     ]

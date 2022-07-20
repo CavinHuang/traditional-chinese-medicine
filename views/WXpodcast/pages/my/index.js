@@ -59,6 +59,10 @@ Page({
       userData: wx.getStorageSync('userInfo') || ''
     })
   },
+
+  uploadImage() {
+    console.log(1)
+  },
   /*  getPhoneNumber(e) {
     console.log(e)
   }, */

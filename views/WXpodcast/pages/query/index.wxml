@@ -1,0 +1,7 @@
+<view class='container'>
+  <view class="form-wrapper">
+    <input type='text' />
+    <button type="primary">查  询</button>
+  </view>
+  <view class="tips">tip: 只需要输入此次批次号，即可查询到完整的合格证书。</view>
+</view>

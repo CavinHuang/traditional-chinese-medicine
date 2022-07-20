@@ -1,0 +1,30 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/upload-image/index",
+          "pathName": "pages/upload-image/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "pages/detail/index",
+          "pathName": "pages/detail/index",
+          "query": "articleID=21",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

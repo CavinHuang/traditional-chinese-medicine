@@ -29,8 +29,12 @@
       <i-cell title="我的收藏" is-link url="/pages/collect/index">
         <i-icon type="collection" slot="icon" size="18" color='#ff7f27' />
       </i-cell>
+      <i-cell title="上传图片" is-link url="/pages/upload-image/index">
+        <i-icon type="collection" slot="icon" size="18" color='#ff7f27' />
+      </i-cell>
     </i-cell-group>
   </view>
+  
   <view wx:if="{{userData.nickName}}" class="contain">
     <view class="zan-panel" style="border-top:0px;border-bottom:0px;width: 100%">
       <view class="zan-cell zan-cell--access">
