@@ -10,11 +10,11 @@ apps:
 deploy: # 部署脚本
   production: # 生产环境
     user: root # 服务器的用户名
-    host:  # 服务器的ip地址 xxx.xx.xxx.xxx`
+    host: 42.193.138.122 # 服务器的ip地址 xxx.xx.xxx.xxx`
     port: 22 # ssh端口 22
     ref: origin/master # 要拉取的git分支
     ssh_options: StrictHostKeyChecking=no # SSH 公钥检查
-    repo: https://github.com/wangmiaozero/blogs-wechat.git # 远程仓库地址 git@github.com:wangmiaozero/blogs-wechat.git
+    repo: https://github.com/CavinHuang/traditional-chinese-medicine.git # 远程仓库地址 git@github.com:wangmiaozero/blogs-wechat.git
     path: /home # 拉取到服务器某个目录下
     pre-deploy: git fetch --all # 部署前执行
     post-deploy: npm install &&  pm2 reload deploy.yaml --env production # 部署后执行
