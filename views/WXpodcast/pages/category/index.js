@@ -18,7 +18,9 @@ Page({
     list: [],
     pagination: 1,
     pageSize: 5,
-    typeID: 1
+    typeID: 1,
+    imageBaseUrl: app.globalData.imageBaseUrl,
+    banners: []
   },
 
   onLoad: function(options) {
@@ -69,7 +71,16 @@ Page({
           this.spinShow()
         }
         if (result.code === 200) {
-          this.data.list = this.data.articles.concat(result.data)
+          const results = result.data.map(item => {
+            item.articleTime = item.articleTime.split(' ')[0]
+            return item
+          })
+          if (data.pagination === 1) {
+            this.setData({
+              banners: results.splice(0, 3)
+            })
+          }
+          this.data.list = this.data.articles.concat(results)
           let a = Math.ceil(result.total / this.data.pageSize)
           if (this.data.pagination === a) {
             this.setData({

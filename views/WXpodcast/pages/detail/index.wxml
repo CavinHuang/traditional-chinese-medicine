@@ -9,7 +9,7 @@
       <view class='feed-item'>
         <view class='title'>{{detail.title}}</view>
         <view class='listPic'>
-          <image mode='widthFix' src="{{detail.listPic}}"></image>
+          <image mode='widthFix' src="{{ imageBaseUrl + detail.listPic}}"></image>
         </view>
         <view class='tag-body'>
           <view class="postDate">

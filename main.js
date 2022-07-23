@@ -16,6 +16,7 @@ const app = new Koa()
 onerror(app)
 // 配置静态资源加载中间件
 app.use(koaStatic(path.join(__dirname, './views')))
+app.use(koaStatic(path.join(__dirname, './static')))
 // 配置session中间件 post 参数解析
 app.use(bodyParser({ enableTypes: ['json', 'form', 'text'] }))
 const logger = Koa_Logger(str => {

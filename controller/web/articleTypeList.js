@@ -73,7 +73,7 @@ async function selectArticleTypeList(ctx, netx) {
     ctx.request.body.pageSize === null
   )
     return (ctx.body = { code: 4003, message: '参数错误!' })
-  let telnum = '17615848207'
+  let telnum = ''
   let pagination = 5 * ctx.request.body.pagination - 5 || 0
   let pageSize = ctx.request.body.pageSize || 5
   let typeID = ctx.request.body.typeID || ''

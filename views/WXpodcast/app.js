@@ -1,6 +1,9 @@
 ﻿//app.js
 const fetch = require('./utils/fetch.js')
 let version_data = null
+
+const imageBaseUrl = 'http://127.0.0.1:2333'
+
 App({
   onLaunch: function(options) {
     // 登录
@@ -45,6 +48,7 @@ App({
   globalData: {
     fetch,
     userInfo: null,
-    version_data: version_data
+    version_data: version_data,
+    imageBaseUrl
   }
 })

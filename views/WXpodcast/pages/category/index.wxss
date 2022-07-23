@@ -1,7 +1,6 @@
 /* pages/category/index.wxss */
 
 .scorll-margin {
-  margin-top: 90rpx;
   margin-bottom: 35px;
 }
 
@@ -93,4 +92,20 @@
   color:#738a94;
   font-family:微软雅黑;
   margin-left: 2px;
+}
+
+.page-section-spacing {
+  height: 360rpx;
+}
+.page-section-spacing swiper {
+  height: 100%;
+  width: 100%;
+}
+.page-section-spacing .swiper-item {
+  height: 100%;
+  width: 100%;
+}
+.page-section-spacing .swiper-item image {
+  height: 100%;
+  width: 100%;
 }

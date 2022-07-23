@@ -2,9 +2,27 @@
 <view>
   <!-- 加载中 -->
   <i-spin fix wx:if="{{loading}}"></i-spin>
+
+  <view class="page-section page-section-spacing swiper">
+    <swiper
+      indicator-dots
+      autoplay 
+      duration="2000"
+    >
+      <block wx:for="{{banners}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item">
+            <image src="{{ imageBaseUrl +  item.listPic}}"></image>
+            <view class="swiper-title">{{ item.title }}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
   <!-- tabs -->
-  <view style='margin-bottom:40px;'>
-    <i-tabs fixed current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
+  <view>
+    <i-tabs current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
       <i-tab wx:for="{{cateList}}" wx:key="index" key="{{item.id}}" title="{{item.typeName}}"></i-tab>
     </i-tabs>
   </view>
@@ -17,7 +35,7 @@
     <view class="zan-panel zan-panel--without-top-border" wx:for="{{articles}}" wx:key="index">
       <view class="zan-card" data-id="{{item.articleID}}" bindtap="detail">
         <view class="zan-card__thumb">
-          <image binderror="errorloadImage" class="zan-card__img" data-index="{{item.articleID}}" mode="scaleToFill" src="{{item.listPic}}"></image>
+          <image binderror="errorloadImage" class="zan-card__img" data-index="{{item.articleID}}" mode="scaleToFill" src="{{imageBaseUrl + item.listPic}}"></image>
         </view>
         <view class="zan-card__detail">
           <view class="zan-card__detail-row " style="height:60px">

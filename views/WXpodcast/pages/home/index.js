@@ -11,7 +11,8 @@ Page({
     articles: [],
     bottomWord: '',
     loadMore: false,
-    loadMores: false
+    loadMores: false,
+    imageBaseUrl: app.globalData.imageBaseUrl
   },
 
   onLoad: function(options) {

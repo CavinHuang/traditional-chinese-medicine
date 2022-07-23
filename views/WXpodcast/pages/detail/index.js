@@ -22,7 +22,8 @@ Page({
     commentContent: '',
     formID: 1,
     parentcommentid: '',
-    status: null
+    status: null,
+    imageBaseUrl: app.globalData.imageBaseUrl
   },
 
   onLoad: function(options) {
@@ -39,7 +40,7 @@ Page({
         if (res.code === 200) {
           let data = {
             articleID: res.data.articleID,
-            mdcontent: res.data.mdcontent,
+            mdcontent: this.replaceContent(res.data.mdcontent),
             read_counts: res.data.read_counts,
             author: res.data.author,
             listPic: res.data.listPic,
@@ -79,6 +80,10 @@ Page({
       path: 'pages/detail/index?id=' + this.data.detail.articleID,
       imageUrl: '/images/blog.png'
     }
+  },
+  replaceContent(mdcontent) {
+    console.log(mdcontent)
+    return mdcontent.replace(/\/medicine-image/g, app.globalData.imageBaseUrl + '/medicine-image')
   },
   //功能展开
   showHideMenu: function() {
