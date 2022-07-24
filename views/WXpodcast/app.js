@@ -2,6 +2,7 @@
 const fetch = require('./utils/fetch.js')
 let version_data = null
 
+// const imageBaseUrl = 'http://42.193.138.122:8080/wechat-medicine'
 const imageBaseUrl = 'http://127.0.0.1:2333'
 
 App({

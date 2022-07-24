@@ -52,6 +52,7 @@ Page({
       pageSize: pageSize || this.data.pageSize,
       typeID: JSON.parse(category) || this.data.typeID
     }
+    data.pageSize = data.pagination === 1 ? 10 : data.pageSize
     app.globalData.fetch
       .Post('/wechat/api/articleType/lists', data)
       .then(result => {

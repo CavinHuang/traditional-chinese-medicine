@@ -1,3 +1,5 @@
+const { API_URL } = require('./fetch')
+
 class Wechat {
   /**
    * 从本地相册选择图片或使用相机拍照。
@@ -27,7 +29,7 @@ class Wechat {
   */
   static uploadFile(url, filePath, name, formData = { openid: "test" }) {
     return new Promise((resolve, reject) => {
-      let opts = { url, filePath, name, formData, header: { 'Content-Type': "multipart/form-data" }, success: resolve, fail: reject };
+      let opts = { url: API_URL + url, filePath, name, formData, header: { 'Content-Type': "multipart/form-data" }, success: resolve, fail: reject };
       wx.uploadFile(opts);
     });
   }

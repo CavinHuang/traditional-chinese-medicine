@@ -13,6 +13,11 @@ const myCollectList = require('../controller/web/myCollectList.js')
 const getComment = require('../controller/web/getComment.js')
 const insertComment = require('../controller/web/insertComment.js')
 const maskVersion = require('../controller/web/maskVersion.js')
+const batch = require('../controller/web/batch')
+const { upload } = require('../utils/file')
+const path = require('path')
+const fs = require('fs')
+
 router.get('/', async (ctx, next) => {
   'use strict'
   ctx.redirect('/index')
@@ -51,5 +56,54 @@ router.post(`/wechat/api/getComment`, getComment.getComment)
 router.post(`/wechat/api/insetComment`, insertComment.insertComment)
 // 面具系统
 router.post(`/wechat/api/mask/version`, maskVersion.maskVersion)
+
+// 文件上传
+router.post('/wechat/api/upload', upload.single('file'), async (ctx, next) => {
+  try {
+    let req = ctx.req
+    // let { openid } = ctx.req.body//前端formdata附带的属性值
+    let fileUrl = null
+    if (req.file !== undefined) {
+      fileUrl = "/medicine-image/query/" + req.file.filename;
+    }
+    ctx.body = {
+      code: 200,
+      message: 'ok',
+      data: fileUrl,
+    }
+  } catch (error) {
+    next(error)
+  }
+})
+// 文件删除
+router.post('/wechat/api/deleteFile', async (ctx, next) => {
+  const { url } = ctx.request.body
+
+  const filePath = path.join(path.resolve(__dirname, '../static'), url)
+
+  if (fs.existsSync(filePath)) {
+    try {
+      fs.unlinkSync(filePath)
+      ctx.body = {
+        code: 200,
+        message: '删除成功'
+      }
+    } catch (error) {
+      ctx.body = {
+        code: 500,
+        message: '删除失败，请重试!'
+      }
+    }
+  } else {
+    ctx.body = {
+      code: 404,
+      message: '不存在的文件'
+    }
+  }
+  next()
+})
+
+router.post('/wechat/api/batchAdd', batch.addBatch)
+router.post('/wechat/api/selectBatch', batch.selectBatch)
 
 module.exports = router

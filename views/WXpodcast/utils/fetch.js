@@ -6,6 +6,7 @@
  * @LastEditors: wangmiao
  * @LastEditTime: 2021-03-20 23:37:18
  */
+// const API_URL = 'http://42.193.138.122:8080/wechat-medicine'
 const API_URL = 'http://127.0.0.1:2333'
 function Get(url, params) {
   var token = wx.getStorageSync('token') ? wx.getStorageSync('token') : ''
@@ -32,7 +33,7 @@ function Get(url, params) {
   return promise
 }
 
-function Post(url, params) {
+function Post(url, params, headers) {
   var token = wx.getStorageSync('token') ? wx.getStorageSync('token') : ''
   let promise = new Promise(function(resolve, reject) {
     wx.request({
@@ -41,7 +42,8 @@ function Post(url, params) {
       method: 'POST',
       header: {
         'Content-Type': 'application/json',
-        token: token
+        token: token,
+        ...headers
       },
       success: res => {
         resolve(res.data)
@@ -77,5 +79,6 @@ function JsonPost(url, params) {
 module.exports = {
   Get,
   Post,
-  JsonPost
+  JsonPost,
+  API_URL
 }

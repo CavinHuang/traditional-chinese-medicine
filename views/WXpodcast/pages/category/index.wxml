@@ -7,7 +7,7 @@
     <swiper
       indicator-dots
       autoplay 
-      duration="2000"
+      duration="1500"
     >
       <block wx:for="{{banners}}" wx:key="*this">
         <swiper-item>

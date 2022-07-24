@@ -57,6 +57,11 @@
   position: relative;
 }
 
+.image-wrapper .image-item image {
+  width: 100%;
+  height: 100%;
+}
+
 .image-wrapper .image-item .delete-icon {
   position: absolute;
   bottom: 0;
