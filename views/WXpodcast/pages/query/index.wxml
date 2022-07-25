@@ -5,18 +5,24 @@
   </view>
   <view class="tips">tip: 只需要输入此次批次号，即可查询到完整的合格证书。</view>
 
-  <view class="result-container">
+  <view class="result-container" wx:if="{{detail}}">
     <view class="cell-item">
       <view class="cell-title">批次号：</view>
-      <view class="cell-content"></view>
+      <view class="cell-content">{{ detail.batch_no }}</view>
     </view>
     <view class="cell-item">
       <view class="cell-title">上传时间：</view>
-      <view class="cell-content"></view>
+      <view class="cell-content">{{ detail.create_at.timeOne }}</view>
     </view>
     <view class="cell-item">
       <view class="cell-title">合格证：</view>
-      <view class="cell-content"></view>
+      <view class="cell-content">
+        <view class="image-wrapper">
+          <view class="image-item" wx:for="{{detail.images}}" wx:key="*this">
+            <image bindtap="previewImg" data-index="{{index}}" src="{{ item }}"></image>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
 </view>

@@ -1,6 +1,6 @@
 const query = require('../../api/index.js')
 const isOwnEmpty = require('../../utils/examineToken') //token 效验
-const { createdTime } = require('../../utils/time.js')
+const { createdTime, formatDateFn } = require('../../utils/time.js')
 
 async function addBatch (ctx, next) {
   try {
@@ -35,7 +35,10 @@ async function selectBatch(ctx, next) {
   const { batchNo } = ctx.request.body
   const sql = `SELECT id,batch_no,images,create_at FROM batchQuery WHERE batch_no='${batchNo}' AND status = 1`
   await query(sql, []).then(res => {
-    ctx.body = { code: 200, message: 'ok', data: res }
+    const result = res[0]
+    result.images = JSON.parse(result.images)
+    result.create_at = formatDateFn(result.create_at)
+    ctx.body = { code: 200, message: 'ok', data: result }
   })
   .catch(err => {
     ctx.body = { code: 4000, message: err }
